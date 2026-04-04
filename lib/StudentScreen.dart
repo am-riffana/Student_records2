@@ -122,7 +122,7 @@ class StudentScreen extends StatelessWidget {
 
                         // DELETE BUTTON
                         trailing: IconButton(
-                          icon: Icon(Icons.delete, color: Colors.red),
+                          icon: Icon(Icons.delete, color: const Color.fromARGB(255, 136, 36, 29)),
                           onPressed: () => deleteStudent(index),
                         ),
 
