@@ -36,7 +36,6 @@ class StudentScreen extends StatelessWidget {
   void deleteStudent(int index) {
     box.deleteAt(index);
   }
-
   void showEditDialog(BuildContext context, Student student, int index) {
     nameController.text = student.name;
     ageController.text = student.age.toString();
@@ -100,7 +99,6 @@ class StudentScreen extends StatelessWidget {
             ),
           ),
 
-          // LIST SECTION
           Expanded(
             child: ValueListenableBuilder(
               valueListenable: box.listenable(),
@@ -126,7 +124,6 @@ class StudentScreen extends StatelessWidget {
                           onPressed: () => deleteStudent(index),
                         ),
 
-                        // EDIT ON TAP
                         onTap: () {
                           showEditDialog(context, student, index);
                         },
