@@ -1,7 +1,9 @@
-import 'package:crudproject2/student.dart';
+import 'package:crudproject2/models/providers/student_providers.dart';
+import 'package:crudproject2/models/student.dart';
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart'; 
-import 'StudentScreen.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:provider/provider.dart'; 
+import 'models/screen/StudentScreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,12 +18,15 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
+    return  ChangeNotifierProvider(create: (context)=> StudentProviders(),
+    child: MaterialApp(
+        debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(backgroundColor: Colors.teal,),
         body: StudentScreen(),  // ← Change this line
       ),
+
+    ),
     );
   }
-}
+  }
