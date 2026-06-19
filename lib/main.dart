@@ -14,7 +14,6 @@ void main() async {
 
   runApp(MyApp());
 }
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -22,10 +21,8 @@ class MyApp extends StatelessWidget {
     child: MaterialApp(
         debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(backgroundColor: Colors.teal,),
-        body: StudentScreen(),  // ← Change this line
+        body: StudentScreen(), 
       ),
-
     ),
     );
   }

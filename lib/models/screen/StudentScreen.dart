@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class StudentScreen extends StatefulWidget {
-  const StudentScreen({super.key});
+   const  StudentScreen({super.key});
 
   @override
   State<StudentScreen> createState() => _StudentScreenState();
@@ -23,7 +23,7 @@ class _StudentScreenState extends State<StudentScreen> {
     showDialog(
       context: context,
       builder: (_) => AlertDialog(
-        title: const Text("Edit Student"),
+        title:  Text("Edit Student"),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -43,7 +43,7 @@ class _StudentScreenState extends State<StudentScreen> {
                   );
               Navigator.pop(context);
             },
-            child: const Text("Update"),
+            child:  Text("Update"),
           ),
         ],
       ),
@@ -53,27 +53,28 @@ class _StudentScreenState extends State<StudentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Student Records")),
+      backgroundColor: const Color.fromARGB(255, 197, 222, 234),
+      appBar: AppBar(title:  Text("Student Records",style: TextStyle(color: Colors.white),),
+      backgroundColor: const Color.fromARGB(255, 22, 56, 71),),
       body: Column(
         children: [
-          // ADD SECTION
           Padding(
-            padding: const EdgeInsets.all(10),
+            padding:  EdgeInsets.all(10),
             child: Column(
               children: [
                 TextField(
                   controller: nameController,
-                  decoration: const InputDecoration(labelText: "Name"),
+                  decoration:  InputDecoration(labelText: "Name"),
                 ),
                 TextField(
                   controller: ageController,
-                  decoration: const InputDecoration(labelText: "Age"),
+                  decoration:  InputDecoration(labelText: "Age"),
                 ),
                 TextField(
                   controller: gradeController,
-                  decoration: const InputDecoration(labelText: "Grade"),
+                  decoration:  InputDecoration(labelText: "Grade"),
                 ),
-                const SizedBox(height: 10),
+                 SizedBox(height: 10),
                 ElevatedButton(
                   onPressed: () {
                     context.read<StudentProviders>().addStudent(
@@ -85,20 +86,21 @@ class _StudentScreenState extends State<StudentScreen> {
                     ageController.clear();
                     gradeController.clear();
                   },
-                  child: const Text("Add Student"),
+                  child: 
+                   Text("Add Student"),
+                  
+                  
                 ),
               ],
             ),
           ),
-
-          // LIST SECTION
           Expanded(
             child: Consumer<StudentProviders>(
               builder: (context, studentProvider, child) {
                 final students = studentProvider.students;
 
                 if (students.isEmpty) {
-                  return const Center(child: Text("No Data"));
+                  return  Center(child: Text("No Data"));
                 }
 
                 return ListView.builder(
@@ -112,8 +114,8 @@ class _StudentScreenState extends State<StudentScreen> {
                         subtitle: Text(
                             "Age: ${student.age} | Course: ${student.grade}"),
                         trailing: IconButton(
-                          icon: const Icon(Icons.delete,
-                              color: Color.fromARGB(255, 136, 36, 29)),
+                          icon:  Icon(Icons.delete,
+                              color: const Color.fromARGB(255, 136, 36, 29)),
                           onPressed: () {
                             context.read<StudentProviders>().deleteStudent(index);
                           },
