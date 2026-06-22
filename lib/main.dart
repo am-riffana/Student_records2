@@ -1,9 +1,9 @@
-import 'package:crudproject2/models/providers/student_providers.dart';
-import 'package:crudproject2/models/student.dart';
+import 'package:crudproject2/provider/student_providers.dart';
+import 'package:crudproject2/model/student.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart'; 
-import 'models/screen/StudentScreen.dart';
+import 'screen/StudentScreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

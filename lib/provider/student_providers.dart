@@ -1,4 +1,4 @@
-import 'package:crudproject2/models/student.dart';
+import 'package:crudproject2/model/student.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
